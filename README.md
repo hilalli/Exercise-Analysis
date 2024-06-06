@@ -1,4 +1,4 @@
-# GymAIner
+# P4_HilalIşık_1904010026
 ### Gym AI Trainer for Artificial Intelligence Applications Course
 
 ## Requirements
