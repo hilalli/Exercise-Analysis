@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Analyzer</title>
+        <style>
+            body {
+                display: grid;
+                grid-template-rows: auto auto auto;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-items: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+                color: #333;
+                font-family: Arial, sans-serif;
+            }
+
+            button {
+                margin: 10px;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            #load-model {
+                background-color: #4CAF50;
+                color: #fff;
+                grid-row: 2;
+                grid-column: 1;
+            }
+
+            #select-video {
+                background-color: #2196F3;
+                color: #fff;
+                grid-row: 2;
+                grid-column: 2;
+            }
+
+            #upload {
+                background-color: #f44336;
+                color: #fff;
+                grid-row: 2;
+                grid-column: 3;
+            }
+
+            p {
+                margin: 5px 0;
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+
+            #video-input {
+                display: none;
+            }
+
+            #selected-video {
+                display: none;
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <button id="load-model" onclick="loadModel()">Load Model</button>
+        <p id="model-status">Please load model first.</p>
+    
+        <p>Please select a video to analyze.</p>
+        <input type="file" id="video-input" accept="video/*" onchange="displaySelectedVideo()">
+        <button id="select-video" onclick="document.getElementById('video-input').click()">Select Video</button>
+        <p id="selected-video">Selected Video: <span id="video-path"></span></p>
+
+        <button id="upload" onclick="uploadVideo()">Upload</button>
+
+        <script>
+            function loadModel() {
+                document.getElementById('model-status').innerText = "Loading model...";
+                fetch('/load_model')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('model-status').innerText = data.status;
+                    });
+            }
+
+            function displaySelectedVideo() {
+                const videoInput = document.getElementById('video-input');
+                const videoPath = document.getElementById('video-path');
+                const selectedVideo = document.getElementById('selected-video');
+                if (videoInput.files.length > 0) {
+                    videoPath.innerText = videoInput.files[0].name;
+                    selectedVideo.style.display = 'block';
+                }
+            }
+
+            function uploadVideo() {
+                const videoInput = document.getElementById('video-input');
+                if (videoInput.files.length > 0) {
+                    const formData = new FormData();
+                    formData.append('video', videoInput.files[0]);
+
+                    fetch('/upload_video', {
+                        method: 'POST',
+                        body: formData
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                window.location.href = '/results.html';
+                            } else {
+                                alert('Failed to upload video.');
+                            }
+                        });
+                } else {
+                    alert('Please select a video first.');
+                }
+            }
+        </script>
+    </body>
+</html>
