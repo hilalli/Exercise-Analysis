@@ -1,12 +1,6 @@
 # P4_HilalIşık_1904010026
 ### Project 4 for Artificial Intelligence Applications Course
 
-## Requirements
-  - Python 3.7.6
-  - Cuda supported NVIDIA GPU if possible for faster training and testing processes.
-    - Doing this process on CPU instead will result only in longer time.
-
-
 # Installation and Setup Guide
 
 ## Requirements
@@ -17,9 +11,9 @@
 
 ### Option 1: Using Visual Studio 2022
 If you have Visual Studio 2022 installed, you can:
-1. Automatically create a virtual environment
-2. Install necessary packages
-3. Run the application from the `main.py` file in the project folder
+* Automatically create a virtual environment
+* Install necessary packages
+* Run the application from the `main.py` file in the project folder
 
 If Visual Studio 2022 is not available, follow the steps in the "Manual Setup" section below.
 
@@ -31,12 +25,9 @@ If Visual Studio 2022 is not available, follow the steps in the "Manual Setup" s
 2. **Create a Dataset Folder**
    ```sh
    mkdir dataset
-
-## Dataset Installation
-  ### Dataset Link: https://drive.google.com/drive/folders/1WE0JB1N0teZHPjep_ibvpQuOEjlijeUs?usp=sharing
-  - Please create a folder named 'dataset' in the project directory.
-  - Then, download the 'Fit3D Video Dataset.rar' file from the link below and move it into this folder.
-  - Lastly, extract the file to the current location..")
+   
+ 3. Then, download the 'Fit3D Video Dataset.rar' file from the link below and move it into this folder.
+ 4. Lastly, extract the file to the current location..
 
 
 ## Required Libraries
@@ -59,13 +50,15 @@ If Visual Studio 2022 is not available, follow the steps in the "Manual Setup" s
 
 
 # Project Details
-## Dataset
-  - Dataset: Fit3D Video Dataset
-  - Number of Exercises (Classes): 47
-  - Number of Videos each Class Containing: 35
-  - Number of Total Videos: 1645
+
+## Model and Dataset Information
 
 ## Model
   - Model Type: LSTM
   - Model Video Sequence Count: 75 Frames per Video
   - Trained Model Video Resolution: 128 x 128
+## Dataset
+  - Dataset: Fit3D Video Dataset
+  - Number of Exercises (Classes): 47
+  - Number of Videos each Class Containing: 35
+  - Number of Total Videos: 1645
