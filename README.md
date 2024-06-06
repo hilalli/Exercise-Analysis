@@ -1,5 +1,5 @@
 # P4_HilalIşık_1904010026
-### Gym AI Trainer for Artificial Intelligence Applications Course
+### Project 4 for Artificial Intelligence Applications Course
 
 ## Requirements
   - Python 3.7.6
@@ -7,15 +7,30 @@
     - Doing this process on CPU instead will result only in longer time.
 
 
-# Installation Process
-## Installation via Visual Studio 2022
-  - If you have Visual Studio 2022 installed, you can;
-	- Automatically create virtual environment,
-	- Install packages and,
-	- Run the application from the main.py file in the project folder.
+# Installation and Setup Guide
 
-  - If not, please follow the steps in "Dataset Installation" sections below.
+## Requirements
+- **Python**: Version 3.7.6
+- **CUDA-supported NVIDIA GPU**: Recommended for faster training and testing. If unavailable, the process can be performed on a CPU, though it will take longer.
 
+## Installation Process
+
+### Option 1: Using Visual Studio 2022
+If you have Visual Studio 2022 installed, you can:
+1. Automatically create a virtual environment
+2. Install necessary packages
+3. Run the application from the `main.py` file in the project folder
+
+If Visual Studio 2022 is not available, follow the steps in the "Manual Setup" section below.
+
+### Option 2: Manual Setup
+
+#### Dataset Installation
+1. **Download the Dataset**
+   - Access the dataset via this [link](https://drive.google.com/drive/folders/1WE0JB1N0teZHPjep_ibvpQuOEjlijeUs?usp=sharing).
+2. **Create a Dataset Folder**
+   ```sh
+   mkdir dataset
 
 ## Dataset Installation
   ### Dataset Link: https://drive.google.com/drive/folders/1WE0JB1N0teZHPjep_ibvpQuOEjlijeUs?usp=sharing
