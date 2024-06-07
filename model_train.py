@@ -2,7 +2,7 @@ import os
 
 from structures import LSTM_Model
 
-def train_lstm_model():
+def training_model():
     settings = {
         "dataset": {
             "dataset_path": os.path.join("dataset", "Fit3D Video Dataset"),
@@ -53,7 +53,7 @@ def train_lstm_model():
 
 
 def main():
-    train_lstm_model()
+    training_model()
     
     return 0
 
