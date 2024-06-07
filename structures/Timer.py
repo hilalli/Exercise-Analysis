@@ -9,7 +9,7 @@ class Timer:
         
         return
     
-    def get_formatted_time(self):
+    def getting_formatted_time(self):
         time_elapsed_in_seconds = self.get_elapsed_time()
         
         hours = int(time_elapsed_in_seconds // self.HOUR_TO_SECONDS)
@@ -32,14 +32,14 @@ class Timer:
             
         return time_string
     
-    def get_elapsed_time(self):
+    def getting_elapsed_time(self):
         return (self.end_time - self.start_time)
     
     def start(self):
-        self.start_time = time.perf_counter()
+        self.starting_time = time.perf_counter()
         return
     
     def stop(self):
-        self.end_time = time.perf_counter()
+        self.ending_time = time.perf_counter()
         return
     
