@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Video Analysis</title>
+        <title>Video Analysis Part</title>
         <style>
             body {
                 display: grid;
@@ -12,8 +12,8 @@
                 justify-items: center;
                 align-items: center;
                 height: 100vh;
-                background-color: #222;
-                color: #eee;
+                background-color: #120446;
+                color: #FFD700;
                 font-family: Arial, sans-serif;
                 gap: 10px;
                 padding: 20px;
@@ -44,8 +44,8 @@
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                background-color: #FF6347;
-                color: white;
+                background-color: #ffffff;
+                color: darkblue;
                 font-size: 18px;
                 grid-row: 4;
             }
@@ -71,9 +71,9 @@
                         document.getElementById('video-player').style.display = 'block';
                         document.getElementById('video-source').src = data.video_path;
                         document.getElementById('video-player').load();
-                        document.getElementById('exercise-name').innerText = `This exercise is named as: ${data.class_name}`;
-                        document.getElementById('accuracy-rate').innerText = `Accuracy Rate: ${data.accuracy}`;
-                        document.getElementById('status').innerText = `ANALYSIS COMPLETE!`;
+                        document.getElementById('exercise-name').innerText = `Exercise name is: ${data.class_name}`;
+                        document.getElementById('accuracy-rate').innerText = `Accuracy Rate is: ${data.accuracy}`;
+                        document.getElementById('status').innerText = `Analysis completed successfully!`;
 
                         document.getElementById('back-to-main-menu').style.display = 'block';
                     });
