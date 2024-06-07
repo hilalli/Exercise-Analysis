@@ -32,7 +32,7 @@ class LSTM_Model:
         
         return
     
-    def execute(self):
+    def executing(self):
         self.init()
         self.train()
         self.test()
@@ -40,7 +40,7 @@ class LSTM_Model:
         self.save()
 
 
-    def init(self):
+    def initt(self):
         self.all_settings = LSTM_ModelSettings(dataset_path=self.settings["dataset"]["dataset_path"],
                                                dataset_sequence_length=self.settings["dataset"]["sequence_length"],
                                                dataset_resize_width=self.settings["dataset"]["resize_width"],
@@ -80,7 +80,7 @@ class LSTM_Model:
                                               self.all_settings.get_dataset_color_channel_count(),
                                               self.all_settings.get_dataset_validation_ratio(),
                                               self.all_settings.get_dataset_test_ratio())
-        self.dataset_handler.init()
+        self.dataset_handler.initt()
         
         self.model = self.create_model()
         self.training_callbacks = self.create_callbacks()
@@ -161,7 +161,7 @@ class LSTM_Model:
         
         return
     
-    def save(self):
+    def saving(self):
         loss, accuracy = self.evaluation_history
         print("Accuracy: {:.2f}, Loss: {:.2f}%".format((accuracy * 100), (loss * 100)))
 
@@ -214,7 +214,7 @@ class LSTM_Model:
         return
     
 
-    def create_model(self):
+    def creating_model(self):
         model = Sequential()
         
         model.add(Conv3D(filters=self.all_settings.get_model_filter_count_for_layer(0),
@@ -260,7 +260,7 @@ class LSTM_Model:
         model.summary()
         return model
 
-    def create_callbacks(self):
+    def creating_callbacks(self):
         scheduler_callback = LearningRateScheduler(self.scheduler)
         
         early_stopping_callback = EarlyStopping(monitor=self.all_settings.get_compiling_early_stopping_monitor(),
