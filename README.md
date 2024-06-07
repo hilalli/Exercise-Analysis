@@ -42,6 +42,8 @@ If Visual Studio 2022 is not available, follow the steps in the "Manual Setup" s
 	- Install the required packages:
 	```pip install -r requirements.txt```
 
+## PLEASE TRAIN YOUR MODEL BEFORE RUNNING AND YOU GET H5.FILE (i cannot add here beacuse of capacity issue)
+
 
 ## Run Application
   - Run the following command after package installations are completed:
