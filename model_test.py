@@ -75,7 +75,7 @@ def results():
     return render_template('results.html')
 
 @app.route('/load_model', methods=['GET'])
-def load_model_route():
+def loading_model_route():
     global model
     if model is None:
         try:
@@ -86,10 +86,10 @@ def load_model_route():
             return jsonify({'status': f'Error loading model: {str(e)}'}), 500
         
     else:
-        return jsonify( { 'status': f"Model has been already loaded!" } )
+        return jsonify( { 'status': f"Model has been already loaded!!" } )
 
 @app.route('/upload_video', methods=['POST'])
-def upload_video():
+def uploading_video():
     if 'video' not in request.files:
         return jsonify( { 'success': False } ), 400
     
@@ -99,10 +99,10 @@ def upload_video():
     return jsonify( { 'success': True } )
 
 @app.route('/get_analysis', methods=['GET'])
-def get_analysis():
+def getting_analysis():
     global model
     if model is None:
-        return jsonify({'error': 'Please load model first to make an analyze!'}), 500
+        return jsonify({'error': 'Firstly load your model then make an analyze!'}), 500
 
     video_path = os.path.join(app.config['UPLOAD_FOLDER'], 'uploaded_video.mp4')
 
@@ -125,14 +125,14 @@ def uploaded_video(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
-def launch_website():
+def launching_the_website():
     app.run(debug=True)
     
     return
 
 
 def main():
-    launch_website()
+    launching_the_website()
     
     return 0
 
