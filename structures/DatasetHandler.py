@@ -22,7 +22,7 @@ from sklearn.preprocessing import LabelEncoder
 
 from .Timer import Timer
 
-class DatasetHandler:
+class DatasetHandlr:
     def __init__(self, is_training, dataset_path, sequence_length, resize_width, resize_height, color_channel_count, validation_ratio, test_ratio):
         if is_training:
             self.DATASET_PATH = dataset_path
@@ -65,7 +65,7 @@ class DatasetHandler:
         return
     
         
-    def read_dataset(self):
+    def reading_dataset(self):
         if os.path.exists('preparation/tagged_paths.pkl') and os.path.exists('preparation/labels.pkl') \
             and os.path.exists('preparation/videos.pkl') and os.path.exists('preparation/included_video_paths.pkl'):
             
@@ -160,7 +160,7 @@ class DatasetHandler:
         return tagged_paths, labels, video_frames, included_video_paths
 
 
-    def read_video(self, video_path):
+    def reading_video(self, video_path):
         video_reader = cv2.VideoCapture(video_path)
         frames = []
         if not video_reader.isOpened():
@@ -196,7 +196,7 @@ class DatasetHandler:
         std = tf.math.reduce_std(tf.cast(frames, tf.float32))
         return tf.cast((frames - mean), tf.float32) / std
     
-    def process_frame(self, frame):
+    def processing_frame(self, frame):
         resized_frame = tf.image.resize(frame, [self.RESIZE_HEIGHT, self.RESIZE_WIDTH])
         gray_scaled_image = tf.image.rgb_to_grayscale(resized_frame)
         gray_scaled_image = tf.cast(gray_scaled_image, tf.float32)
