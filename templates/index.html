@@ -71,7 +71,7 @@
     
         <p>Please select a video to analyze.</p>
         <input type="file" id="video-input" accept="video/*" onchange="displaySelectedVideo()">
-        <button id="select-video" onclick="document.getElementById('video-input').click()">Select Video</button>
+        <button id="select-video" onclick="document.getElementById('video-input').click()">Select The Video</button>
         <p id="selected-video">Selected Video: <span id="video-path"></span></p>
 
         <button id="upload" onclick="uploadVideo()">Upload</button>
@@ -110,11 +110,11 @@
                             if (data.success) {
                                 window.location.href = '/results.html';
                             } else {
-                                alert('Failed to upload video.');
+                                alert('Uploading video failed!');
                             }
                         });
                 } else {
-                    alert('Please select a video first.');
+                    alert('Select a video first.');
                 }
             }
         </script>
