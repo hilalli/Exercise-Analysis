@@ -1,4 +1,4 @@
-# P4_HilalIşık_1904010026
+# Excersise Analysis Project
 ### Project 4 for Artificial Intelligence Applications Course
 
 # Installation and Setup Guide
